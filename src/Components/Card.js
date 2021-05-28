@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Card = ({title, body}) => {
+const Card = ({data}) => {
+    console.log( "LLL ", data)
     return (
         <div>
-            {title}
+            {data.title}
         </div>
     );
 };

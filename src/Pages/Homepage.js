@@ -12,7 +12,13 @@ const Homepage = () => {
     dispatch(getPosts());
   }, []);
 
-  return <div>{posts.map(i => <Card data={i}/>)}</div>;
+  return (
+    <div>
+      {posts.map((i) => (
+        <Card data={i} />
+      ))}
+    </div>
+  );
 };
 
 export default Homepage;

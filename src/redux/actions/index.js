@@ -8,7 +8,7 @@ export function getPosts() {
     dispatch({ type: GET_POSTS });
     return axios.get(`${BASE_URL}/posts`).then((posts) => {
       console.log(":::: ", posts);
-      dispatch({ type: GET_POSTS, payload: posts });
+      dispatch({ type: GET_POSTS, payload: posts.data });
     });
   };
 }

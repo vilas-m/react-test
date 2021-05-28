@@ -9,7 +9,8 @@ const initialState = {
 
 function rootReducer(state = initialState, action) {
   if (action.type === GET_POSTS) {
-    state.posts = action.payload?.data || [];
+    console.log(":::: >>>> ", action.payload)
+    state.posts = action.payload || [];
   }
   return state;
 }
