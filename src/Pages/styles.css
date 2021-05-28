@@ -6,3 +6,48 @@
   justify-content: center;
   align-items: center;
 }
+
+.newPostContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* 
+.inputs {
+  width: 500px;
+} */
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.postsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 992px) {
+  /* .postsContainer {
+    width: 100%;
+  } */
+
+  .inputs {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  /* .postsContainer {
+    width: 60%;
+  } */
+
+  .inputs {
+    width: 500px;
+  }
+}

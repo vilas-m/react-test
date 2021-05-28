@@ -3,6 +3,9 @@ import { useDispatch } from "react-redux";
 import { createPost, getPosts, deletePost } from "../redux/actions";
 import { useSelector } from "react-redux";
 import Card from "../Components/Card";
+import TextField from "@material-ui/core/TextField";
+import { Button } from "@material-ui/core";
+import "./styles.css";
 
 const Homepage = () => {
   const dispatch = useDispatch();
@@ -20,7 +23,6 @@ const Homepage = () => {
     body.title = form.title.value;
     body.body = form.body.value;
 
-    console.log(": : :", form, body);
     dispatch(createPost(body));
   };
 
@@ -29,18 +31,24 @@ const Homepage = () => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="mainContainer">
+      <div className="newPostContainer">
+        <h2> New Post</h2>
         <form ref={newPostForm}>
-          <input label={"Title"} name={"title"} />
+          <TextField label={"Title"} name={"title"} className="inputs" />
           <br />
-          <textarea label={"Body"} name={"body"} />
+          <TextField label={"Body"} name={"body"} className="inputs" />
         </form>
-        <button onClick={handleClickEvent}>Post</button>
+        <Button variant="contained" onClick={handleClickEvent}>
+          Post
+        </Button>
       </div>
-      {posts.map((i) => (
-        <Card data={i} key={i.id} deletePost={() => handleDeletePost(i.id)} />
-      ))}
+      <div className="postsContainer">
+        <h3> Posts </h3>
+        {posts.map((i) => (
+          <Card data={i} key={i.id} deletePost={() => handleDeletePost(i.id)} />
+        ))}
+      </div>
     </div>
   );
 };
