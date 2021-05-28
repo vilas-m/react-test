@@ -11,7 +11,8 @@ function rootReducer(state = initialState, action) {
     }
   } else if (action.type === CREATE_POST) {
     if (action.payload) {
-      state.posts = [...state.posts, action.payload];
+      action.payload.id = String(Math.random());
+      state.posts = [action.payload, ...state.posts];
     }
   } else if (action.type === DELETE_POST) {
     if (action.payload) {

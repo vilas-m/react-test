@@ -24,6 +24,9 @@ const Homepage = () => {
     body.body = form.body.value;
 
     dispatch(createPost(body));
+
+    form.title.value = "";
+    form.body.value = "";
   };
 
   const handleDeletePost = (id) => {
@@ -46,7 +49,12 @@ const Homepage = () => {
       <div className="postsContainer">
         <h3> Posts </h3>
         {posts.map((i) => (
-          <Card data={i} key={i.id} deletePost={() => handleDeletePost(i.id)} />
+          <Card
+            data={i}
+            key={i.id}
+            deletePost={() => handleDeletePost(i.id)}
+            className="post"
+          />
         ))}
       </div>
     </div>

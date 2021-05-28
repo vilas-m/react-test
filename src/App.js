@@ -16,11 +16,8 @@ function App() {
     >
       <Router>
         <Switch>
-          <Route exact path="/">
+          <Route path="/">
             <Homepage />
-          </Route>
-          <Route >
-            <PageNotFound />
           </Route>
         </Switch>
       </Router>
