@@ -1,16 +1,22 @@
-import { GET_POSTS } from "../constants/action-types";
-import { DELETE_POST } from "../constants/action-types";
-import { CREATE_POST } from "../constants/action-types";
+import { GET_POSTS, DELETE_POST, CREATE_POST } from "../constants/action-types";
 
 const initialState = {
   posts: [],
-  count: 0,
 };
 
 function rootReducer(state = initialState, action) {
   if (action.type === GET_POSTS) {
-    console.log(":::: >>>> ", action.payload)
-    state.posts = action.payload || [];
+    if (action.payload) {
+      state.posts = action.payload;
+    }
+  } else if (action.type === CREATE_POST) {
+    if (action.payload) {
+      state.posts = [...state.posts, action.payload];
+    }
+  } else if (action.type === DELETE_POST) {
+    if (action.payload) {
+      state.posts = state.posts.filter((i) => i.id !== action.payload);
+    }
   }
   return state;
 }
