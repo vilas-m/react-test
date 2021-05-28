@@ -1,15 +1,29 @@
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Homepage from "./Pages/Homepage";
+import PageNotFound from "./Pages/PageNotFound";
+
 function App() {
   return (
     <div
       style={{
         height: "100vh",
+        width: "100%",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
         alignItems: "center",
       }}
     >
-      Welcome
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Homepage />
+          </Route>
+          <Route >
+            <PageNotFound />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
