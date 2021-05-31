@@ -23,10 +23,12 @@ const Homepage = () => {
     body.title = form.title.value;
     body.body = form.body.value;
 
-    dispatch(createPost(body));
+    if (body.title.trim() !== "" && body.body.trim() !== "") {
+      dispatch(createPost(body));
 
-    form.title.value = "";
-    form.body.value = "";
+      form.title.value = "";
+      form.body.value = "";
+    }
   };
 
   const handleDeletePost = (id) => {
@@ -37,7 +39,7 @@ const Homepage = () => {
     <div className="mainContainer">
       <div className="newPostContainer">
         <h2> New Post</h2>
-        <form ref={newPostForm}>
+        <form ref={newPostForm} className="inputForm">
           <TextField label={"Title"} name={"title"} className="inputs" />
           <br />
           <TextField label={"Body"} name={"body"} className="inputs" />

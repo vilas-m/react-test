@@ -12,6 +12,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .mainContainer {
@@ -28,26 +29,31 @@
   /* align-items: center; */
 }
 
+.inputs {
+  width: 100%;
+}
+
 .post {
   width: 100%;
 }
 
-@media screen and (min-width: 992px) {
-  /* .postsContainer {
-    width: 100%;
-  } */
+.inputForm {
+  width: 100%;
+  margin: 10px;
+}
 
+@media screen and (min-width: 992px) {
   .inputs {
-    width: 200px;
+    width: 100%;
   }
 }
 
 @media screen and (min-width: 600px) {
-  /* .postsContainer {
-    width: 60%;
-  } */
-
+  .mainContainer {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
   .inputs {
-    width: 500px;
+    width: 100%;
   }
 }
